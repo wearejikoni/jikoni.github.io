@@ -119,6 +119,7 @@
     if (options.clearHash !== false && window.location.hash) {
       history.replaceState(null, "", window.location.pathname);
     }
+    updateDoorMenuButton();
   }
 
   function closeDoor() {
@@ -135,6 +136,7 @@
     if (window.location.hash) {
       history.replaceState(null, "", window.location.pathname);
     }
+    updateDoorMenuButton();
   }
 
   function openFire() {
