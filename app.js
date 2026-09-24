@@ -480,11 +480,17 @@ function updateDoorMenuButton() {
     openFire();
   }
 
-  if (action === "close-door") {
-    event.preventDefault();
+if (action === "close-door") {
+  event.preventDefault();
+
+  if (outsideLayer.hidden) {
     closeDoor();
-    closeMenu();
+  } else {
+    openDoor({ persist: true, clearHash: true });
   }
+
+  closeMenu();
+}
   }
 
     if (
