@@ -102,7 +102,7 @@
   }
 
   function openDoor(options = {}) {
-    heroImage.src = "hut-open.png";
+    heroImage.setAttribute("src", "./hut-open.png");
 
     outsideLayer.hidden = true;
     insideLayer.hidden = false;
@@ -122,7 +122,7 @@
   }
 
   function closeDoor() {
-    heroImage.src = "hut-closed.png";
+    heroImage.setAttribute("src", "./hut-closed.png");
 
     outsideLayer.hidden = false;
     insideLayer.hidden = true;
@@ -153,7 +153,7 @@
   }
 
   function openContent(route, options = {}) {
-    heroImage.src = "hut-open.png";
+    heroImage.setAttribute("src", "./hut-open.png");
 
     outsideLayer.hidden = true;
     insideLayer.hidden = false;
