@@ -1,32 +1,236 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="Jikoni – Connect. Create. Celebrate."
+  >
+
   <title>We Are Jikoni</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <main class="hero" id="hero">
+  <main id="jikoni">
+
+    <!-- Background: closed/open hut -->
     <img
       id="heroImage"
-      src="hut-closed.png"
-      alt="Enter Jikoni"
       class="hero-image"
+      src="hut-closed.png"
+      alt="Jikoni"
     >
+
+    <!-- Always visible -->
+    <button
+      id="menuButton"
+      class="menu-button"
+      type="button"
+      aria-label="Open menu"
+    >
+      ☰
+    </button>
+
+    <select
+      id="languageSelect"
+      class="language-select"
+      aria-label="Language"
+    >
+      <option value="en">EN</option>
+      <option value="de">DE</option>
+      <option value="sw">KIS</option>
+      <option value="ki">GĨK</option>
+    </select>
+
+
+    <!-- OUTSIDE -->
+
+    <section id="outsideLayer">
+
+      <!-- Clickable door -->
+      <button
+        id="doorKnocker"
+        class="door-knocker"
+        type="button"
+        aria-label="Knock to enter"
+      ></button>
+
+      <!-- Karibu on the stone -->
+      <button
+        id="karibuEntrance"
+        class="karibu-entrance"
+        type="button"
+      >
+        <strong>KARIBU</strong>
+        <span data-text="knockToEnter">Knock to enter</span>
+      </button>
+
+      <!-- Outdoor information board -->
+      <aside id="outsideBoard" class="outside-board">
+
+        <div id="liveStatus"></div>
+
+        <button type="button" data-route="experience">
+          <span data-text="nextRetreat">NEXT RETREAT</span>
+          <strong id="nextRetreatValue"></strong>
+        </button>
+
+        <a
+          id="roomsStatus"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span data-text="rooms">ROOMS</span>
+          <strong id="roomsStatusValue"></strong>
+        </a>
+
+        <div>
+          <span data-text="happening">WHAT'S HAPPENING</span>
+          <strong id="happeningValue"></strong>
+        </div>
+
+      </aside>
+
+    </section>
+
+
+    <!-- INSIDE / FIRE -->
+
+    <section id="insideLayer" hidden>
+
+      <div id="welcomeMessage" class="welcome-message">
+        <strong>KARIBU</strong>
+        <span data-text="welcome">Welcome to Jikoni</span>
+      </div>
+
+      <div class="motto">
+        CONNECT · CREATE · CELEBRATE
+      </div>
+
+      <!-- Interactive hotspots will be positioned later -->
+
+      <button
+        class="hotspot hotspot-story"
+        type="button"
+        data-route="our-story"
+        aria-label="Our Story"
+      ></button>
+
+      <button
+        class="hotspot hotspot-experience"
+        type="button"
+        data-route="experience"
+        aria-label="Experience"
+      ></button>
+
+      <button
+        class="hotspot hotspot-become-part"
+        type="button"
+        data-route="become-part"
+        aria-label="Become Part"
+      ></button>
+
+      <button
+        class="hotspot hotspot-contact"
+        type="button"
+        data-route="contact"
+        aria-label="Contact"
+      ></button>
+
+    </section>
+
+
+    <!-- CONTENT INSIDE THE DOOR OPENING -->
+
+    <section
+      id="contentLayer"
+      class="content-layer"
+      hidden
+    >
+
+      <button
+        id="backToFire"
+        class="back-to-fire"
+        type="button"
+        aria-label="Back to the fire"
+      >
+        🔥
+      </button>
+
+      <div id="contentArea"></div>
+
+    </section>
+
+
+    <!-- MENU -->
+
+    <nav
+      id="mainMenu"
+      class="main-menu"
+      hidden
+    >
+
+      <button type="button" data-action="fire">
+        FIRE / HOME
+      </button>
+
+      <button type="button" data-route="our-story">
+        OUR STORY
+      </button>
+
+      <a
+        id="menuStay"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        STAY ↗
+      </a>
+
+      <button type="button" data-route="experience">
+        EXPERIENCE
+      </button>
+
+      <button type="button" data-route="become-part">
+        BECOME PART
+      </button>
+
+      <button type="button" data-route="follow">
+        FOLLOW US
+      </button>
+
+      <button type="button" data-route="contact">
+        CONTACT
+      </button>
+
+      <button type="button" data-route="my-jikoni">
+        MY JIKONI / LOGIN
+      </button>
+
+    </nav>
+
   </main>
 
-  <script>
-    const hero = document.getElementById("hero");
-    const heroImage = document.getElementById("heroImage");
 
-    hero.addEventListener("click", function () {
-      heroImage.src = "hut-open.png";
-    });
-  </script>
+  <!--
+    DATA FIRST
+    Then translations
+    Then website behaviour
+  -->
+
+  <script src="site-data.js"></script>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
 
 </body>
 </html>
