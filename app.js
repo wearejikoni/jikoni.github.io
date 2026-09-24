@@ -26,6 +26,9 @@
   const happeningValue = document.getElementById("happeningValue");
   const menuStay = document.getElementById("menuStay");
 
+  const fireButton = document.querySelector('[data-action="fire"]');
+  const closeDoorButton = document.querySelector('[data-action="close-door"]');
+
   const STORAGE_DOOR = "jikoniDoorState";
   const STORAGE_LANG = "jikoniLanguage";
 
