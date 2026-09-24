@@ -462,13 +462,19 @@
     }
 
     if (actionElement) {
-      const action = actionElement.getAttribute("data-action");
+  const action = actionElement.getAttribute("data-action");
 
-      if (action === "fire") {
-        event.preventDefault();
-        openFire();
-      }
-    }
+  if (action === "fire") {
+    event.preventDefault();
+    openFire();
+  }
+
+  if (action === "close-door") {
+    event.preventDefault();
+    closeDoor();
+    closeMenu();
+  }
+  }
 
     if (
       !event.target.closest("#mainMenu") &&
