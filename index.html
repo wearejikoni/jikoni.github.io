@@ -4,22 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>We Are Jikoni</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <main class="hero">
+  <main class="hero" id="hero">
     <img
+      id="heroImage"
       src="hut-closed.png"
-      alt="Jikoni – traditionelle Kikuyu-Hütte"
+      alt="Enter Jikoni"
       class="hero-image"
     >
   </main>
 
-</body>
+  <script>
+    const hero = document.getElementById("hero");
+    const heroImage = document.getElementById("heroImage");
 
+    hero.addEventListener("click", function () {
+      heroImage.src = "hut-open.png";
+    });
+  </script>
+
+</body>
 </html>
