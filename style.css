@@ -8,31 +8,27 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background: #000;
-}
-
-body {
   overflow: hidden;
+  background: #000;
 }
 
 .hero {
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  background: #000;
 }
 
 .hero-image {
+  position: absolute;
+  inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 
   display: block;
 }
