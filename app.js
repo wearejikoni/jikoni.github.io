@@ -429,12 +429,16 @@
     }
   }
 function updateDoorMenuButton() {
-  if (!closeDoorButton) return;
+  if (!fireButton || !closeDoorButton) return;
 
   if (outsideLayer.hidden) {
-    closeDoorButton.textContent = "CLOSE DOOR";
+    fireButton.hidden = true;
+    closeDoorButton.hidden = false;
+    closeDoorButton.textContent = "NJE";
   } else {
-    closeDoorButton.textContent = "OPEN DOOR";
+    fireButton.hidden = false;
+    closeDoorButton.hidden = true;
+    fireButton.textContent = "JIKO";
   }
 }
   doorKnocker.addEventListener("click", function () {
