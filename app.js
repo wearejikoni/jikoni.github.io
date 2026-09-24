@@ -174,6 +174,7 @@
     }
 
     closeMenu();
+    updateDoorMenuButton();
   }
 
   function renderRoute(route, scrollTop) {
@@ -424,7 +425,15 @@
       closeDoor();
     }
   }
+function updateDoorMenuButton() {
+  if (!closeDoorButton) return;
 
+  if (outsideLayer.hidden) {
+    closeDoorButton.textContent = "CLOSE DOOR";
+  } else {
+    closeDoorButton.textContent = "OPEN DOOR";
+  }
+}
   doorKnocker.addEventListener("click", function () {
     openDoor({ persist: true, clearHash: true });
   });
